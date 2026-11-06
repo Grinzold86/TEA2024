@@ -2,6 +2,9 @@
 #include <fmt/format.h>
 
 #include "module.h"
+#include "bonus_config.h"
+
+int shadow = 99;
 
 auto main(int argc, char** argv) -> int
 {
@@ -16,7 +19,7 @@ auto main(int argc, char** argv) -> int
     int bar = 42;
     doSomething(bar);
     fmt::print("The value of bar is: {}\n", bar);
-
+    /*
     doSomethingPtr(&bar);
     fmt::print("The value of bar after doSomethingPtr is: {}\n", bar);
 
@@ -24,12 +27,12 @@ auto main(int argc, char** argv) -> int
     fmt::print("The value of returnedPtr content  after doReturnAPtr is: {}\n", *returnedPtr);
     doSomething(42);
     fmt::print("The value of returnedPtr content  after doReturnAPtr is: {}\n", *returnedPtr);
-
+    
     doSomethingStatic();
     doSomethingStatic();
     doSomethingStatic();
     doSomethingStatic();
-
+    
     fmt::print("Value of foo {} address of foo {}\n", foo, fmt::ptr(&foo));
     fmt::print("Value of foo2 {} address of foo2 {}\n", foo2, fmt::ptr(&foo2));
     fmt::print("Value of data {} address of data {}\n", data, fmt::ptr(&data));
@@ -49,6 +52,16 @@ auto main(int argc, char** argv) -> int
 
     fmt::print("array_ptr[0] {}\n", array_ptr[0]);
     fmt::print("big_data_blob[0] {}\n", big_data_blob[0]);
+
+    */
+    printConstantAdr();
+    modulCounter();
+    //modulCounter();
+
+    printValues();
+    fmt::print("shadow main {}\n", shadow);
+    fmt::print("shadow main adr [{}] \n", fmt::ptr(&shadow));
+    
 
     return 0; /* exit gracefully*/
 }

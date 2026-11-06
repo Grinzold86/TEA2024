@@ -19,6 +19,10 @@ int* doReturnAPtr();
 
 void doSomethingStatic();
 
+void printConstantAdr();
 
+void modulCounter();
+
+void printValues();
 
 #endif
